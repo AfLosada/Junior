@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class WanderRandomly : Enemy
 {
+    //INHERITANCE
+
     [SerializeField]
     private bool changeLocation;
     private Vector3 moveLocation;
@@ -25,13 +27,14 @@ public class WanderRandomly : Enemy
             StartCoroutine(LocationCooldownRoutine());
         }
         /*
-         This is an example of Abstraction, making it easier to read and understand
+         * ABSTRACTION
+         * This is an example of Abstraction, making it easier to read and understand
          */
         Move();
         ConstrainPlayerPosition();
     }
     /*
-     ABSTRACTION
+     * ABSTRACTION
      */
     protected override void StartRoutine()
     {
@@ -41,7 +44,8 @@ public class WanderRandomly : Enemy
     }
 
     /*
-     Another example of Polymorphism, where the enemy moves randomly
+     * POLIMORPHISM
+     * Another example of Polymorphism, where the enemy moves randomly
      */
     protected override void Move()
     {
@@ -55,7 +59,9 @@ public class WanderRandomly : Enemy
         changeLocation = false;
         moveLocation = GenerateRandomLocation();
     }
-
+    /*
+     * ABSTRACTION 
+     */
     private Vector3 GenerateRandomLocation()
     {
         float spawnPostX = Random.Range(-spawnRange, spawnRange);

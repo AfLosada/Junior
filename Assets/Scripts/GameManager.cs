@@ -15,7 +15,8 @@ public class GameManager : MonoBehaviour
     [Range (0,100)] public float health;
     public float score;
     /*
-     This is an example of Encapsulation, because the DrainRate property should only be accessed from this class but it still needs to be set from the PlayerController class
+     * ENCAPSULATION
+     * This is an example of Encapsulation, because the DrainRate property should only be accessed from this class but it still needs to be set from the PlayerController class
      */
     [Range (1, 20)] private float m_DrainRate;
     public float DrainRate {
