@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    // INHERITANCE
     /*
      All the variables that are declared as protected because they should be able to be used by the inherited classes
     This is an example of Inheritance
