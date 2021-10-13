@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3105982648096005556}
   m_Layer: 0
   m_Name: Ball of Light (low health)
-  m_TagString: BallOfLight
+  m_TagString: Low Health
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0267cf2122180b459c0d0fe6f2780bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.1
+  m_Speed: 2
+  m_MaxSpeed: 6
   changeLocation: 0
   spawnRange: 15
 --- !u!54 &3105982648096005556

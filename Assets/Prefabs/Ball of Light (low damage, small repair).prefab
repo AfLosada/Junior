@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 997281216955901984}
   m_Layer: 0
   m_Name: Ball of Light (low damage, small repair)
-  m_TagString: BallOfLight
+  m_TagString: Low Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ecc7c3a8de0f24f8e61faeb940ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
+  m_Speed: 1
+  m_MaxSpeed: 5

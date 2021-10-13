@@ -9,12 +9,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private float xBound = 20f;
     private float zBound = 20f;
+    private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         // Added to included physics in the future
         playerRb = GetComponent<Rigidbody>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -62,12 +64,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void EatBall(float damage, float pollution, float score)
+    {
+        gameManager.health -= damage;
+        gameManager.DrainRate += pollution;
+        gameManager.score += score;
+    }
+
+
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("BallOfLight"))
+        GameObject enemy = collision.gameObject;
+        if (enemy.CompareTag("Low Damage"))
         {
-            Destroy(collision.gameObject);
+            EatBall(0.5f, -1, 1);
         }
+        else if (enemy.CompareTag("Low Health"))
+        {
+            EatBall(-1, 0, 0);
+        }
+        else if (enemy.CompareTag("Medium Pollution"))
+        {
+            EatBall(0, 1, 4);
+        }
+        else if (enemy.CompareTag("High Pollution"))
+        {
+            EatBall(0, 2, 10);
+        }
+        else if (enemy.CompareTag("High Damage"))
+        {
+            EatBall(5, -1, 5);
+        }
+        else if (enemy.CompareTag("Medium Damage"))
+        {
+            EatBall(2.5f, 1, 3);
+        }
+        else if (enemy.CompareTag("High Health"))
+        {
+            EatBall(-5, 1, -5);
+        }
+        Destroy(enemy);
+
     }
 
     private void OnCollisionEnter(Collision collision)

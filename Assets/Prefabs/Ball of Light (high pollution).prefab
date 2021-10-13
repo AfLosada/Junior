@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5115498844663923353}
   m_Layer: 0
   m_Name: Ball of Light (high pollution)
-  m_TagString: BallOfLight
+  m_TagString: High Pollution
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ecc7c3a8de0f24f8e61faeb940ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  m_Speed: 1
+  m_MaxSpeed: 2
 --- !u!54 &5115498844663923353
 Rigidbody:
   m_ObjectHideFlags: 0
